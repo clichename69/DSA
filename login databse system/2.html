@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SAIL</title>
+  <style>
+    /* Header */
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    /* Navigation Menu */
+    nav {
+      background-color: #666;
+      color: white;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #000000;
+      
+      min-width: 87px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-item {
+      position: relative;
+    }
+
+    .sub-dropdown-content {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      background-color: #000000;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-item:hover .sub-dropdown-content {
+      display: block;
+    }
+
+    .sub-dropdown-content ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sub-dropdown-content ul li a {
+      display: block;
+      padding: 5px 10px;
+      text-decoration: none;
+      font-size: 16px;
+      color: #ffffff;
+    }
+
+    .sub-dropdown-content ul li a:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* Content */
+    #content {
+      padding: 20px;
+      font-size: 16px;
+    }
+
+    #content h2 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    #content p {
+      color: #666;
+    }
+
+    /* Forms */
+    form {
+      margin-bottom: 10px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    form input[type="file"] {
+      margin-bottom: 10px;
+    }
+
+    form input[type="submit"] {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #333;
+      color: #ffffff;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
+</head>
+<body>
+  <header>
+    <h1>SAIL</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="2.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#">Services <i class="fas fa-angle-down"></i></a>
+        <div class="dropdown-content">
+          <ul>
+            <li class="dropdown-item">
+              <a href="#">Service 1<i class="fas fa-angle-right"></i></a>
+              <ul class="sub-dropdown-content">
+                <li><a href="ss1A.html">Sub-service A</a></li><br><br>
+                <li><a href="#">Sub-service B</a></li><br><br>
+                <li><a href="#">Sub-service C</a></li>
+              </ul>
+            </li><br><br>
+            <li class="dropdown-item">
+              <a href="#">Service 2<i class="fas fa-angle-right"></i></a>
+              <ul class="sub-dropdown-content">
+                <li><a href="#">Sub-service D</a></li><br><br>
+                <li><a href="#">Sub-service E</a></li><br><br>
+                <li><a href="#">Sub-service F</a></li>
+              </ul>
+            </li><br><br>
+            <li class="dropdown-item">
+              <a href="#">Service 3<i class="fas fa-angle-right"></i></a>
+              <ul class="sub-dropdown-content">
+                <li><a href="#">Sub-service G</a></li><br><br>
+                <li><a href="#">Sub-service H</a></li><br><br>
+                <li><a href="#">Sub-service I</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#">About</a></li>
+      <li class="logout"><a href="logout.php">Logout</a></li>
+      <li class="spacer"></li>
+    </ul>
+  </nav>
+
+  <div id="content">
+    <h2>SAIL</h2>
+    <p>This is a sample content section.</p>
+
+    <h3>Upload User File</h3>
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <label for="panFile">PAN:</label>
+      <input type="file" name="panFile" id="panFile"><br>
+      <input type="submit" value="Upload PAN" name="submit">
+    </form>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <label for="aadharFile">Aadhar Card:</label>
+      <input type="file" name="aadharFile" id="aadharFile"><br>
+      <input type="submit" value="Upload Aadhar" name="submit">
+    </form>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <label for="licenseFile">Driving License:</label>
+      <input type="file" name="licenseFile" id="licenseFile"><br>
+      <input type="submit" value="Upload License" name="submit">
+    </form>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+      <label for="miscFiles">Miscellaneous Files:</label>
+      <input type="file" name="miscFiles[]" multiple><br>
+      <input type="submit" value="Upload Miscellaneous" name="submit">
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 SAIL. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
